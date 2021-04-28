@@ -4,13 +4,13 @@
 <!-- General Components, Layout -->
 
 <!-- ==== Headers ===== -->
-<template id="header_shadow" inherit_id="website.template_header_default" name="Cobalt Header Shadow">
+<template id="header_shadow" inherit_id="website.template_header_default" name="georedia Header Shadow">
     <xpath expr="//nav" position="attributes">
         <attribute name="class" remove="shadow-sm" separator=" "/>
     </xpath>
 </template>
 
-<template id="header_button" inherit_id="website.template_header_default_oe_structure_header_default_1" name="Cobalt Header Button">
+<template id="header_button" inherit_id="website.template_header_default_oe_structure_header_default_1" name="georedia Header Button">
     <xpath expr="//a[hasclass('btn')]" position="attributes">
         <attribute name="class" add="btn-secondary" remove="btn-primary" separator=" "/>
     </xpath>
@@ -20,7 +20,7 @@
 <!-- Snippets -->
 
 <!-- ==== Image-Text ===== -->
-<template id="s_image_text" inherit_id="website.s_image_text" name="Cobalt s_image_text">
+<template id="s_image_text" inherit_id="website.s_image_text" name="georedia s_image_text">
     <xpath expr="//section" position="attributes">
         <attribute name="class" add="pt152 pb128" remove="pt32 pb32" separator=" "/>
         <attribute name="data-oe-shape-data">{"shape":"web_editor/Blobs/03","colors":{"c2":"o-color-3"},"flip":[]}</attribute>
@@ -47,7 +47,7 @@
 </template>
 
 <!-- ==== Text-Image ===== -->
-<template id="s_text_image" inherit_id="website.s_text_image" name="Cobalt s_text_image">
+<template id="s_text_image" inherit_id="website.s_text_image" name="georedia s_text_image">
     <xpath expr="//section" position="attributes">
         <attribute name="class" add="pt80 pb88" remove="pt32 pb32" separator=" "/>
     </xpath>
@@ -83,7 +83,7 @@
 </template>
 
 <!-- ======== QUOTES ======== -->
- <template id="s_quotes_carousel" inherit_id="website.s_quotes_carousel" name="Cobalt s_quotes_carousel">
+ <template id="s_quotes_carousel" inherit_id="website.s_quotes_carousel" name="georedia s_quotes_carousel">
     <!-- Assign slide3 as 'active' and move it in first position -->
     <xpath expr="//div[hasclass('carousel-inner')]/div" position="attributes">
         <attribute name="class" remove="active" separator=" "/>
@@ -101,7 +101,7 @@
 </template>
 
 <!-- ==== References ===== -->
-<template id="s_references" inherit_id="website.s_references" name="Cobalt s_references">
+<template id="s_references" inherit_id="website.s_references" name="georedia s_references">
     <xpath expr="//section" position="attributes">
         <attribute name="class" add="o_cc o_cc2" remove="pt48 pb32" separator=" "/>
     </xpath>
@@ -111,7 +111,7 @@
 </template>
 
 <!-- ==== Three Columns ===== -->
-<template id="s_three_columns" inherit_id="website.s_three_columns" name="Cobalt s_three_columns">
+<template id="s_three_columns" inherit_id="website.s_three_columns" name="georedia s_three_columns">
     <xpath expr="//section" position="attributes">
         <attribute name="class" remove="bg-200 pt32 pb32" add="pt72 pb120" separator=" "/>
         <attribute name="data-oe-shape-data">{"shape":"web_editor/Bold/01","colors":{"c2":"o-color-3"},"flip":["x"]}</attribute>
@@ -144,7 +144,7 @@
 </template>
 
 <!-- ==== Call To Action ===== -->
-<template id="s_call_to_action" inherit_id="website.s_call_to_action" name="Cobalt s_call_to_action">
+<template id="s_call_to_action" inherit_id="website.s_call_to_action" name="georedia s_call_to_action">
     <xpath expr="//a" position="replace">
         <a href="/contactus" class="btn btn-primary btn-lg mb-2">START NOW</a>
     </xpath>
@@ -152,7 +152,7 @@
 
 
 <!-- ==== Picture ===== -->
-<template id="s_picture" inherit_id="website.s_picture" name="Cobalt s_picture">
+<template id="s_picture" inherit_id="website.s_picture" name="georedia s_picture">
     <xpath expr="//section" position="attributes">
         <attribute name="class" add="bg-o-color-3 pt72 overflow-hidden" remove="bg-200 pt48" separator=" "/>
         <attribute name="data-oe-shape-data">{"shape":"web_editor/Bold/01","flip":["y"]}</attribute>

@@ -13,9 +13,9 @@
         'views/customizations.xml',
     ],
     'images': [
-        'static/description/cobalt_poster.jpg',
-        'static/description/cobalt_screenshot.jpg',
+        'static/description/georedia_poster.jpg',
+        'static/description/georedia_screenshot.jpg',
     ],
     'license': 'LGPL-3',
-    'live_test_url': 'https://theme-cobalt.odoo.com'
+    'live_test_url': 'https://theme-georedia.odoo.com'
 }

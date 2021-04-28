@@ -1,10 +1,10 @@
 from odoo import models
 
 
-class ThemeCobalt(models.AbstractModel):
+class Themegeoredia(models.AbstractModel):
     _inherit = 'theme.utils'
 
-    def _theme_cobalt_post_copy(self, mod):
+    def _theme_georedia_post_copy(self, mod):
         # For compatibility
         # self.enable_view('theme_common.compatibility-saas-10-2')
 
