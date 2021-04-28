@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "my_module",
+    'name': "theme-georedia",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Tema web para GeoRedia""",
 
     'description': """
-        Long description of module's purpose
+        Tema creado para el proyecto georedia.com
     """,
 
     'author': "My Company",
