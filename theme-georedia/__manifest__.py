@@ -3,7 +3,7 @@
     'name': "theme-georedia",
 
     'summary': """
-        Tema web para GeoRedia""",
+        Tema web GeoRedia""",
 
     'description': """
         Tema creado para el proyecto georedia.com
