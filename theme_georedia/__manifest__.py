@@ -1,11 +1,11 @@
 {
-    'name': 'Cobalt Theme 2',
+    'name': 'Georedia Theme',
     'description': 'Clean and sharp design.',
     'category': 'Theme/Corporate',
     'summary': 'Design, Tech, Computers, IT, Blogs',
     'sequence': 110,
-    'version': '2.0.1',
-    'author': 'Odoo S.A.',
+    'version': '2.0.2',
+    'author': 'Antonio García - SHS Consultores',
     'depends': ['website'],
     'data': [
         'views/assets.xml',
