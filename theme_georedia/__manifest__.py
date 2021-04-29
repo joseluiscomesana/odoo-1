@@ -7,6 +7,6 @@
 
     'depends': ['website', 'website_theme_install'],
     'data': [
-
+        'views/assets.xml'
     ],
 }
