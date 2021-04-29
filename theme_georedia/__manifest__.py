@@ -7,6 +7,7 @@
 
     'depends': ['website'],
     'data': [
-        'views/assets.xml'
+        'views/assets.xml',
+        'views/layout.xml'
     ],
 }
