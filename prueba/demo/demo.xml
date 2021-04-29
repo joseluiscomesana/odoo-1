@@ -1,6 +1,6 @@
 <odoo>
 	<data>
-		<record id="visit0" model="prueba_visit">
+		<record id="visit0" model="prueba.visit">
 			<field name="name">Visita importada</field>
 			<field name="customer">Cliente importada</field>
 			<field name="date">2021-04-29</field>
