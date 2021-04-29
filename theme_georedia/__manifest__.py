@@ -5,7 +5,7 @@
     'author': 'Antonio García - SHS Consultores',
     'category': 'Theme/Corporate',
 
-    'depends': ['website', 'website_theme_install'],
+    'depends': ['website'],
     'data': [
         'views/assets.xml'
     ],
