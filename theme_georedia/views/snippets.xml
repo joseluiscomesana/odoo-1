@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="s_porque_nosotros" name="porque_nosotros snippet">
+    <section class="s_porque_nosotros">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 text-center">
+                    <img alt="client" class="rounded-circle" src="/theme_georedia/static/src/img/client_1.jpg"/>
+                    <h3>Motivo 1</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <img alt="client" class="rounded-circle" src="/theme_georedia/static/src/img/client_2.jpg"/>
+                    <h3>Motivo 1</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <img alt="client" class="rounded-circle" src="/theme_georedia/static/src/img/client_3.jpg"/>
+                    <h3>Motivo 1</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+
+
+<template id="colocar_en_barra" name="Colocar en Barra del Editor" inherit_id="website.snippets">
+    <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+        <t t-snippet="theme_georedia.s_porque_nosotros" t-thumbnail="/theme_georedia/static/src/img/ui/snippet_thumb.jpg"/>
+    </xpath>
+</template>
+
+
+    
+
+
+</odoo>
