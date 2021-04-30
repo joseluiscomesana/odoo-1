@@ -75,7 +75,25 @@
 				</kanban>
 			</field>
 		</record>
-    
+
+		<record id="view_prueba_visit_search" model="ir.ui.view">
+			<field name="name">view_prueba_visit_search</field>
+			<field name="model">prueba.visit</field>
+			<field name="arch" type="xml">
+				<search string="Filtrar visitas">
+					<field name="name"/>
+					<field name="customer"/>
+					<field name="type"/>
+					<field name="date"/>
+					<group expand="0" string="Group By">
+						<filter name="groupby_type" string="Tipo" domain="[]" context="{'group_by':'type'}" help="Agrupar por tipo"/>
+						<filter name="groupby_date" string="Fecha" context="{'group_by':'date:year'}" help="Agrupar por fecha"/>
+					</group>
+					<filter name="filter_by_done" string="Realizada" domain="[('','=,'')]" help=""/>
+				</search>
+			</field>
+		</record>
+
 		<record id="action_prueba_visit_view" model="ir.actions.act_window">
 			<field name="name">Visita</field>
 			<field name="type">ir.actions.act_window</field>
@@ -91,8 +109,8 @@
 			</field>
 		</record>
 
-		<menuitem id="menu_prueba_root" name="Prueba" sequence="10"/>
-		<menuitem id="menu_prueba_visit_categ" name="Operaciones" parent="menu_prueba_root" sequence="0"/>
-		<menuitem id="menu_prueba_visit" name="Visitas" parent="menu_prueba_visit_categ" sequence="0" action="action_prueba_visit_view"/>
+		<menuitem id="menu_prueba_root" name="Prueba" sequence="10" />
+		<menuitem id="menu_prueba_visit_categ" name="Operaciones" parent="menu_prueba_root" sequence="0" />
+		<menuitem id="menu_prueba_visit" name="Visitas" parent="menu_prueba_visit_categ" sequence="0" action="action_prueba_visit_view" />
 	</data>
 </odoo>
