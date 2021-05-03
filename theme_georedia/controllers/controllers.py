@@ -15,6 +15,11 @@ class MyModule(http.Controller):
     @http.route('/web/prueba3', type='json', auth="public", website=True)
     def update_order_webhook(self, **kwargs):
         return json.dumps({"yes":"i am json"})
+    
+    @http.route('/web/prueba4', auth='none', type="json", methods=['GET'], csrf=False, cors='*')
+    def index(self, **kw):
+        data = json.loads(request.httprequest.data) # I need raw data
+        return data
 
 # import requests
 
