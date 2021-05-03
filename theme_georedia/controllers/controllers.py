@@ -2,11 +2,31 @@
 from odoo import http
 
 class MyModule(http.Controller):
-    @http.route('/api/prueba1', auth='public')
+    @http.route('/web/prueba1', auth='public')
     def index(self, **kw):
         return "Hello, world - " + http.request.params['nombre']
 
 
-    @http.route('/api/prueba2', type='http', csrf=False, auth="public")
+    # @http.route('/web/prueba2', type='http', csrf=False, auth="public")
+    # def update_order_webhook(self, **kwargs):
+    #     return Response(json.dumps({"yes":"i am json"}),content_type='application/json;charset=utf-8',status=200)
+
+
+    @http.route('/web/prueba3', type='json', auth="public", website=True)
     def update_order_webhook(self, **kwargs):
-        return Response(json.dumps({"yes":"i am json"}),content_type='application/json;charset=utf-8',status=200)
+        return json.dumps({"yes":"i am json"})
+
+# import requests
+
+# url = "https://dev-expert.snippetbucket.com/api/get_user_information/"
+
+
+# headers = {
+#     'content-type': "application/json",
+#     'user-token': "02BXD2AGqVH-TEJASTANK-gg92DwntD8f1p0tb",
+#     'cache-control': "no-cache",
+#     }
+# payload = "{\"params\": {}}"
+# response = requests.request("GET", url, data=payload, headers=headers)
+
+# print(response.text)
