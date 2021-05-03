@@ -8,8 +8,8 @@ class Visit(models.Model):
     _description = 'Visit'
 
     name = fields.Char(string='Descripción')
-    customer = fields.Char(string='Cliente')
-   # customer = fields.Many2one(string='Cliente', comodel_name="res_partner")
+    # customer = fields.Char(string='Cliente')
+    customer = fields.Many2one(string='Cliente', comodel_name="res_partner")
     date = fields.Datetime(string='Fecha')
     type = fields.Selection([('P','Presencial'),('W','Whatsapp'),('T','Telefónica')],string='Tipo',required=True)
     done = fields.Boolean(string='Realizada')
