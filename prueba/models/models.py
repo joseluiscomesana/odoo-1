@@ -9,8 +9,8 @@ class Visit(models.Model):
     _inherit = "res.partner"
 
     name = fields.Char(string='Descripción')
-   # customer = fields.Char(string='Cliente')
-    customer = fields.Many2one(context='Cliente', comodel_name="res.partner")
+    customer = fields.Char(string='Cliente')
+  #  customer = fields.Many2one(context='Cliente', comodel_name="res.partner")
     date = fields.Datetime(string='Fecha')
     type = fields.Selection([('P','Presencial'),('W','Whatsapp'),('T','Telefónica')],string='Tipo',required=True)
     done = fields.Boolean(string='Realizada')
