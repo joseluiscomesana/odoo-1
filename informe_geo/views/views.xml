@@ -2,8 +2,8 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record id="view_informe_geo.informe_tree" model="ir.ui.view">
-      <field name="name">view.informe_geo.informe.tree</field>
+    <record id="informe_geo.informe_tree" model="ir.ui.view">
+      <field name="name">informe_geo vista de árbol</field>
       <field name="model">informe_geo.informe</field>
       <field name="arch" type="xml">
         <tree>
@@ -17,19 +17,19 @@
 
     <!-- actions opening views on models -->
 
-    <record id="action_informe_geo_informe_view" model="ir.actions.act_window">
-      <field name="name">Informe</field>
-      <field name="type">ir.actions.act_window</field>
+    <record id="informe_geo.informe_view_action" model="ir.actions.act_window">
+      <field name="name">Informe Vista</field>
+      <!-- <field name="type">ir.actions.act_window</field> -->
       <field name="res_model">informe_geo.informe</field>
       <field name="view_mode">tree</field>
-      <field name="help" type="html">
+      <!-- <field name="help" type="html">
         <p class="oe_view_nocontent_create">
           Informes
         </p>
         <p>
           Click 'Crear' para añadir nuevos elementos
         </p>
-      </field>
+      </field> -->
     </record>
 
 
@@ -58,8 +58,8 @@
 -->
     <!-- actions -->
 
-    <menuitem name="List" id="informe_geo.menu_1_list" parent="informe_geo.menu_1"
-              action="action_informe_geo_informe_view"/>
+    <menuitem name="List" id="informe_geo.menu_1_list" parent="informe_geo.menu_1" 
+    action="informe_geo.informe_view_action"/>
 <!--    <menuitem name="Server to list" id="informe_geo" parent="informe_geo.menu_2"
               action="informe_geo.action_server"/>
 -->
