@@ -7,13 +7,13 @@
             <field name="filename">archivo1.pdf</field>
           </record>
 
-          <record id="object0" model="informe_geo.informe">
+          <record id="object1" model="informe_geo.informe">
             <field name="name">Bilbao</field>
             <field name="description">Informe de la zona norte de Cataluña</field>
             <field name="filename">archivo2.pdf</field>
           </record>          
           
-          <record id="object0" model="informe_geo.informe">
+          <record id="object2" model="informe_geo.informe">
             <field name="name">Málaga</field>
             <field name="description">Informe de la zona Málaga</field>
             <field name="filename">archivo3.pdf</field>
