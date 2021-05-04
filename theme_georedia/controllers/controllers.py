@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import http
+import json
 
 class ThemeGeoredia(http.Controller):
     @http.route('/web/prueba1', auth='public')
