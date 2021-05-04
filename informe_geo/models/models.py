@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
+# import datetime
 
+class informe(models.Model):
+    _name = 'informe_geo.informe'
+    _description = 'Informe'
 
-# class informe_geo(models.Model):
-#     _name = 'informe_geo.informe_geo'
-#     _description = 'informe_geo.informe_geo'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
+    name = fields.Char(string='Nombre')
+    filename = fields.Binary(string='Fichero')
+    # value2 = fields.Float(compute="_value_pc", store=True)
+    description = fields.Text(string='Descripción')
 #
 #     @api.depends('value')
 #     def _value_pc(self):
