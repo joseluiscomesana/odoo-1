@@ -18,20 +18,21 @@
               </group>
               <group name="group_right">
                 <field name="description"/>
-                <!-- <field name="done"/>
-                <field name="image" widget="image"/> -->
+                <!-- <field name="done"/>-->
+                <field name="image" widget="image"/> 
               </group>
             </group>
           </sheet>
         </form>
       </field>
     </record>
-    
+
     <record id="view_informe_geo_informe_tree" model="ir.ui.view">
       <field name="name">view.informe_geo.informe.tree</field>
       <field name="model">informe_geo.informe</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="image"/>
           <field name="name"/>
           <field name="filename"/>
           <field name="description"/>

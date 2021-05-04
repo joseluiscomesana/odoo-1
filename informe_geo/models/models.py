@@ -13,6 +13,7 @@ class informe(models.Model):
     filename = fields.Char(string='Fichero')
     # value2 = fields.Float(compute="_value_pc", store=True)
     description = fields.Text(string='Descripción')
+    image = fields.Binary(string="Imagen")
 #
 #     @api.depends('value')
 #     def _value_pc(self):
