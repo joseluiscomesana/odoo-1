@@ -22,12 +22,12 @@
             <form string="Informe form">
                 <group colspan="4">
                     <group colspan="2" col="2">
-                        <separator string="General stuff" colspan="2"/>
+                        <separator string="Datos del informe:" colspan="2"/>
                         <field name="name"/>
                     </group>
 
                     <group colspan="2" col="2">
-                        <separator string="Dates" colspan="2"/>
+                        <separator string="Informe:" colspan="2"/>
                         <field name="filename"/>
                     </group>
 
