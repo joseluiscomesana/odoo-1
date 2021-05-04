@@ -1,3 +1,3 @@
 # odoo
 
-Se crea el módulo informes
+Se crea el módulo informes...
