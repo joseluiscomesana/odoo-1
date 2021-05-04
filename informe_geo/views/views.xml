@@ -16,9 +16,8 @@
 
 
     <record model="ir.ui.view" id="informe_geo.vista_formulario">
-        <field name="name">view.name</field>
-        <field name="model">object_name</field>
-        <field name="priority" eval="16"/>
+        <field name="name">Informe</field>
+        <field name="model">informe_geo.informe</field>
         <field name="arch" type="xml">
             <form string="Informe form">
                 <group colspan="4">
