@@ -1,8 +1,6 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-
-    <record id="view_informe_geo.informe_tree" model="ir.ui.view">
+    <record id="view_informe_geo_informe_tree" model="ir.ui.view">
       <field name="name">view.informe_geo.informe.tree</field>
       <field name="model">informe_geo.informe</field>
       <field name="arch" type="xml">
@@ -13,9 +11,6 @@
         </tree>
       </field>
     </record>
-
-
-    <!-- actions opening views on models -->
 
     <record id="action_informe_geo_informe_view" model="ir.actions.act_window">
       <field name="name">Informe</field>
