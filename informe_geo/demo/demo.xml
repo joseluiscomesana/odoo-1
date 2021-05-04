@@ -1,6 +1,6 @@
 <odoo>
     <data>
-<!--     
+    
           <record id="object0" model="informe_geo.informe">
             <field name="name">Sevilla</field>
             <field name="description">Informe de la zona Sevilla</field>
@@ -17,7 +17,7 @@
             <field name="name">Málaga</field>
             <field name="description">Informe de la zona Málaga</field>
             <field name="filename">archivo3.pdf</field>
-          </record> -->
+          </record>
 
     </data>
 </odoo>
