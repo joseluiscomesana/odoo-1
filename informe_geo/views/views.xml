@@ -37,7 +37,6 @@
                         </page>
                     </notebook>
 
-                    <field name="state"/>
                 </group>
             </form>
         </field>
