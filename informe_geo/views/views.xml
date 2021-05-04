@@ -2,7 +2,7 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record id="informe_geo.informe_tree" model="ir.ui.view">
+    <record id="informe_geo.vista_tree" model="ir.ui.view">
       <field name="name">informe_geo vista de árbol</field>
       <field name="model">informe_geo.informe</field>
       <field name="arch" type="xml">
@@ -12,6 +12,37 @@
           <field name="description"/>
         </tree>
       </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="informe_geo.vista_formulario">
+        <field name="name">view.name</field>
+        <field name="model">object_name</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <form string="Informe form">
+                <group colspan="4">
+                    <group colspan="2" col="2">
+                        <separator string="General stuff" colspan="2"/>
+                        <field name="name"/>
+                    </group>
+
+                    <group colspan="2" col="2">
+                        <separator string="Dates" colspan="2"/>
+                        <field name="filename"/>
+                        <field name="invent_date" readonly="1"/>
+                    </group>
+
+                    <notebook colspan="4">
+                        <page string="Description">
+                            <field name="description" nolabel="1"/>
+                        </page>
+                    </notebook>
+
+                    <field name="state"/>
+                </group>
+            </form>
+        </field>
     </record>
 
 
