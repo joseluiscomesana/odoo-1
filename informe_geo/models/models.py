@@ -8,7 +8,7 @@ class informe(models.Model):
     _description = 'Informe'
 
     name = fields.Char(string='Nombre')
-    filename = fields.Binary(string='Fichero')
+    filename = fields.Char(string='Fichero')
     # value2 = fields.Float(compute="_value_pc", store=True)
     description = fields.Text(string='Descripción')
 #
