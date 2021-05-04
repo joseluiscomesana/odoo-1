@@ -51,14 +51,18 @@
 
     <!-- Top menu item -->
     <menuitem name="informe_geo" id="informe_geo.menu_root"/>
+    <menuitem name="informe geotécnico" id="informe_geo.menu_root2"/>
     <!-- menu categories -->
 
     <menuitem name="Informes" id="informe_geo.menu_1" parent="informe_geo.menu_root"/>
+    <menuitem name="Informes" id="informe_geo.menu_12" parent="informe_geo.menu_root2"/>
 <!--    <menuitem name="Menu 2" id="informe_geo.menu_2" parent="informe_geo.menu_root"/>
 -->
     <!-- actions -->
 
     <menuitem name="List" id="informe_geo.menu_1_list" parent="informe_geo.menu_1" 
+    action="informe_geo.informe_view_action"/>
+    <menuitem name="List" id="informe_geo.menu_12_list" parent="informe_geo.menu_12" 
     action="informe_geo.informe_view_action"/>
 <!--    <menuitem name="Server to list" id="informe_geo" parent="informe_geo.menu_2"
               action="informe_geo.action_server"/>
