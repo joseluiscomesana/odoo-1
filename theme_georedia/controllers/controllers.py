@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import http
 
-class MyModule(http.Controller):
+class ThemeGeoredia(http.Controller):
     @http.route('/web/prueba1', auth='public')
     def index(self, **kw):
         return "Hello, world - " + http.request.params['nombre']
@@ -18,7 +18,7 @@ class MyModule(http.Controller):
     
     @http.route('/web/prueba4', auth='none', type="json", methods=['GET'], csrf=False, cors='*')
     def index(self, **kw):
-        data = json.loads(request.httprequest.data) # I need raw data
+        data = json.loads(http.request.httprequest.data) # I need raw data
         return data
 
 # import requests
