@@ -12,7 +12,6 @@
           <field name="description"/>
           <field name="file_data" filename="file_name"/>
           <field name="file_name"/>
-          <field name="domain">[('name','=','Sevilla')]</field>
         </tree>
       </field>
     </record>
@@ -53,9 +52,17 @@
         <field name="name">informe_geo search</field>
         <field name="model">informe_geo.informe</field>
         <field name="arch" type="xml">
-            <search>
+            <search string="Ideas">
                 <field name="name"/>
-                <field name="description"/>
+                <field name="description" string="Name and description"
+                      filter_domain="['|', ('name', 'ilike', self), ('description', 'ilike', self)]"/>
+                <field name="filename" widget="selection"/>
+                <filter name="file_name" string="My Ideas"
+                        domain="[('name', 'ilike', '')]"/>
+                <group string="Group By">
+                    <filter name="group_by_filename" string="Fichero"
+                            context="{'group_by': 'filename'}"/>
+                </group>
             </search>
         </field>
     </record>
