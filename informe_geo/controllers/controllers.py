@@ -5,7 +5,7 @@ from odoo.http import response
 import json
 
 
-class InformeGeo(http.Controller):
+class InformeController(http.Controller):
     @http.route('/apiweb/', auth='public', type="json", methods=['GET'], csrf=False, cors='*')
     def index(self, **kw):
         data = json.loads(http.request.httprequest.data) # I need raw data
@@ -18,14 +18,14 @@ class InformeGeo(http.Controller):
         return "Hello, world"
 
 
-    @http.route('/api/indormes', auth='public', method=['GET'], csrf=False)
-    def get_indormes(self, **kw):
-        try:
-            indormes = http.request.env['informe_geo.informe'].sudo().search_read([], ['id', 'name', 'description', 'file_name'])
-            res = json.dumps(indormes, ensure_ascii=False).encode('utf-8')
-            return response(res, content_type='application/json;charset=utf-8', status=200)
-        except Exception as e:
-            return response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
+    # @http.route('/api/indormes', auth='public', method=['GET'], csrf=False)
+    # def get_indormes(self, **kw):
+    #     try:
+    #         indormes = http.request.env['informe_geo.informe'].sudo().search_read([], ['id', 'name', 'description', 'file_name'])
+    #         res = json.dumps(indormes, ensure_ascii=False).encode('utf-8')
+    #         return response(res, content_type='application/json;charset=utf-8', status=200)
+    #     except Exception as e:
+    #         return response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
 
 
 
