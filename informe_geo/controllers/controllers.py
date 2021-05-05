@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import http
-from http import request
+# from http import request
 # import json
 
 
