@@ -6,10 +6,10 @@ import json
 
 
 class InformeController(http.Controller):
-    @http.route('/apiweb/', auth='public', type="json", methods=['GET'], csrf=False, cors='*')
-    def index(self, **kw):
-        data = json.loads(http.request.httprequest.data) # I need raw data
-        return data
+    # @http.route('/apiweb/', auth='public', type="json", methods=['GET'], csrf=False, cors='*')
+    # def index(self, **kw):
+    #     data = json.loads(http.request.httprequest.data) # I need raw data
+    #     return data
 
 
 
@@ -22,6 +22,8 @@ class InformeController(http.Controller):
     def get_indormes(self, **kw):
         try:
             indormes = http.request.env['informe_geo.informe'].sudo().search_read([], ['id', 'name', 'description', 'file_name'])
+            # sort records by name
+            indormes = indormes.sorted(key=lambda r: r.name)
             res = json.dumps(indormes, ensure_ascii=False).encode('utf-8')
             return Response(res, content_type='application/json;charset=utf-8', status=200)
         except Exception as e:
