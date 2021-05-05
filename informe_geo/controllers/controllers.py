@@ -21,9 +21,10 @@ class InformeController(http.Controller):
     @http.route('/api/indormes', auth='public', method=['GET'], csrf=False)
     def get_indormes(self, **kw):
         try:
-            indormes = http.request.env['informe_geo.informe'].sudo().search_read([], ['id', 'name', 'description', 'file_name'])
-            # sort records by name
-            indormes = indormes.sorted(key=lambda r: r.name)
+            # indormes = http.request.env['informe_geo.informe'].sudo().search_read([], ['id', 'name', 'description', 'file_name'])
+            indormes = http.request.env['informe_geo.informe'].search([])
+            # # sort records by name
+            # indormes = indormes.sorted(key=lambda r: r.name)
             res = json.dumps(indormes, ensure_ascii=False).encode('utf-8')
             return Response(res, content_type='application/json;charset=utf-8', status=200)
         except Exception as e:
