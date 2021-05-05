@@ -12,6 +12,7 @@
           <field name="description"/>
           <field name="file_data" filename="file_name"/>
           <field name="file_name"/>
+          <field name="domain">[('name','!=','Sevilla')]</field>
         </tree>
       </field>
     </record>
