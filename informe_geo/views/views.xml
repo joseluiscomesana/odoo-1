@@ -54,6 +54,7 @@
         <field name="arch" type="xml">
             <search string="Informes:">
                 <field name="description" />
+                <filter string="Ficheros con O" name="name" domain="[('name', 'ilike', 'o')]" />
             </search>
         </field>
     </record>
