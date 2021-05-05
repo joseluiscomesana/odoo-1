@@ -23,9 +23,9 @@ class InformeGeo(http.Controller):
         try:
             indormes = http.request.env['informe_geo.informe'].sudo().search_read([], ['id', 'name', 'description', 'file_name'])
             res = json.dumps(indormes, ensure_ascii=False).encode('utf-8')
-            return Response(res, content_type='application/json;charset=utf-8', status=200)
+            return response(res, content_type='application/json;charset=utf-8', status=200)
         except Exception as e:
-            return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
+            return response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
 
 
 
