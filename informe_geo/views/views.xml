@@ -52,9 +52,9 @@
         <field name="name">informe_geo search</field>
         <field name="model">informe_geo.informe</field>
         <field name="arch" type="xml">
-            <search string="Informes:">
+            <search>
                 <field name="description" />
-                <filter string="Ficheros con O" name="name" domain="[('name', 'ilike', 'o')]" />
+                <!-- <filter string="Ficheros con O" name="name" domain="[('name', 'ilike', 'o')]" /> -->
             </search>
         </field>
     </record>
