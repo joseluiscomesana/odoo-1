@@ -5,10 +5,10 @@ import json
 
 
 class InformeGeo(http.Controller):
-    @http.route('/apiweb/', auth='none', type="json", methods=['GET'], csrf=False, cors='*')
-    def index(self, **kw):
-        data = json.loads(request.httprequest.data) # I need raw data
-        return data
+    # @http.route('/apiweb/', auth='none', type="json", methods=['GET'], csrf=False, cors='*')
+    # def index(self, **kw):
+    #     data = json.loads(request.httprequest.data) # I need raw data
+    #     return data
 
 
 
