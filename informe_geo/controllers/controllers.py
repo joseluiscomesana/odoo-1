@@ -22,7 +22,7 @@ class InformeController(http.Controller):
     def get_indormes(self, **kw):
         try:
             # indormes = http.request.env['informe_geo.informe'].sudo().search_read([], ['id', 'name', 'description', 'file_name'])
-            indormes = http.request.env['informe_geo.informe'].search([])
+            indormes = http.request.env['informe_geo.informe'].sudo().search([])
             # # sort records by name
             # indormes = indormes.sorted(key=lambda r: r.name)
             res = json.dumps(indormes, ensure_ascii=False).encode('utf-8')
