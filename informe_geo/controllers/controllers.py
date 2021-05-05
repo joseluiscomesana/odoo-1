@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import http
-# from http import request
+from odoo.http import request
+from odoo.http import response
 import json
 
 
@@ -15,6 +16,18 @@ class InformeGeo(http.Controller):
     @http.route('/informe_geo/informe_geo/', auth='public')
     def index(self, **kw):
         return "Hello, world"
+
+
+    @http.route('/api/indormes', auth='public', method=['GET'], csrf=False)
+    def get_indormes(self, **kw):
+        try:
+            indormes = http.request.env['informe_geo.informe'].sudo().search_read([], ['id', 'name', 'description', 'file_name'])
+            res = json.dumps(indormes, ensure_ascii=False).encode('utf-8')
+            return Response(res, content_type='application/json;charset=utf-8', status=200)
+        except Exception as e:
+            return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
+
+
 
 #     @http.route('/informe_geo/informe_geo/objects/', auth='public')
 #     def list(self, **kw):
