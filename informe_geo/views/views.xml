@@ -11,7 +11,7 @@
           <field name="filename"/>
           <field name="description"/>
           <field name="file_data" filename="file_name"/>
-          <field name="file_name" invisible="1"/>
+          <field name="file_name"/>
         </tree>
       </field>
     </record>
@@ -32,7 +32,7 @@
                     <group colspan="2" col="2">
                         <separator string="Informe:" colspan="2"/>
                         <field name="file_data" filename="file_name"/>
-                        <field name="file_name" invisible="1"/>
+                        <field name="file_name" invisible="0"/>
                     </group>
 
                     <notebook colspan="4">
