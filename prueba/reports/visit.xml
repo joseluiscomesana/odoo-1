@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            string="Informe visita"
+            id="prueba_visit_report"
+            model="prueba.visit"
+            report_type="qweb-pdf"
+            name="prueba.report_visit_card"
+            file="prueba.report_visit_card"
+            attachment_use="True"    
+        />
+    </data>
+</odoo>

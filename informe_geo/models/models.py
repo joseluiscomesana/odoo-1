@@ -11,11 +11,11 @@ class informe(models.Model):
 
     name = fields.Char(string='Nombre')
     filename = fields.Char(string='Fichero')
-    # value2 = fields.Float(compute="_value_pc", store=True)
+    value2 = fields.Float(compute="_value_pc", store=True)
     description = fields.Text(string='Descripción')
     image = fields.Binary(string="Imagen")
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+
+    @api.depends('filename')
+    def _value_pc(self):
+        for record in self:
+            record.value2 = float(record.value) / 100
