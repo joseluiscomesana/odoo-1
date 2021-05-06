@@ -3,9 +3,9 @@ from odoo import http
 
 
 class InformeGeo(http.Controller):
-#     @http.route('/informe_geo/informe_geo/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+    @http.route('/informe_geo/informe_geo/', auth='public')
+    def index(self, **kw):
+        return "Hello, world"
 
     @http.route('/informe_geo/informe_geo/objects/', auth='public')
     def list(self, **kw):
