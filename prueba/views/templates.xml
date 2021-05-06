@@ -20,5 +20,11 @@
           </t>
         </t>
       </template>
+      <template id="index">
+        <title>PRUEBA</title>
+        <t t-foreach="visits" t-as="visit">
+          <p><t t-esc="visit"/></p>
+        </t> 
+      </template>
   </data>
 </odoo>

@@ -14,6 +14,17 @@ class VisitController(http.Controller):
         except Exception as e:
             return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
 
+class ControllerVisit(http.Controller):
+
+    @http.route('/api/visit', auth='public', method=['GET'], csrf=False)
+    def get_visits(self, **kw):
+        try:
+            visits = http.request.env['prueba.visit'].sudo().search_read([], ['id', 'name', 'customer', 'done'])
+            res = json.dumps(visits, ensure_ascii=False).encode('utf-8')
+            return http.request.render('prueba.index',visits)
+            # Response(res, content_type='application/json;charset=utf-8', status=200)
+        except Exception as e:
+            return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
 
 
 class Prueba(http.Controller):
