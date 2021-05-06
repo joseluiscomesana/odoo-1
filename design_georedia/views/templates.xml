@@ -11,9 +11,9 @@
     <template id="index" name="Template GeoRedia Design">
         <t t-call="website.layout">
           <app-root></app-root>
-          <script src="/design_georedia/static/src/js/runtime.7b63b9fd40098a2e8207.js" defer></script>
-          <script src="/design_georedia/static/src/js/polyfills.94daefd414b8355106ab.js" defer></script>
-          <script src="/design_georedia/static/src/js/main.f88021f08e409af60e06.js" defer></script>
+          <script src="/design_georedia/static/src/js/runtime.7b63b9fd40098a2e8207.js"></script>
+          <script src="/design_georedia/static/src/js/polyfills.94daefd414b8355106ab.js"></script>
+          <script src="/design_georedia/static/src/js/main.f88021f08e409af60e06.js"></script>
 
         </t>
     </template>
