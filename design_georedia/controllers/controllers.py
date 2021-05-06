@@ -3,7 +3,7 @@ from odoo import http
 
 
 class DesignGeoredia(http.Controller):
-    @http.route('/design_georedia/design_georedia/', auth='public')
+    @http.route('/design_georedia/design_georedia/', auth='public', website=True)
     def index(self, **kw):
         return http.request.render('design_georedia.index', {})
 
