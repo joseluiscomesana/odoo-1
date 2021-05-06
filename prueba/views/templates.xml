@@ -21,7 +21,7 @@
         </t>
       </template>
       <template id="index">
-        <title>PRUEBA</title>
+        <title>PRUEBA GET</title>
         <t t-foreach="visits" t-as="visit">
           <p><t t-esc="visit"/></p>
         </t> 
