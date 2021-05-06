@@ -3,7 +3,7 @@
 
     <template id="assets_frontend" name="Modulo Personalizado GeoRedia Design" inherit_id="website.assets_frontend">
       <xpath expr="." position="inside">
-        <base href="/">
+        <base href="/" />
         
       </xpath>
     </template>
