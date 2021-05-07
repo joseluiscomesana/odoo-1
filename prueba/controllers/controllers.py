@@ -19,10 +19,10 @@ class ControllerVisit(http.Controller):
     @http.route('/api/visit', auth='public', method=['GET'], csrf=False)
     def get_visits(self, **kw):
         try:
-            visits = http.request.env['ir.model'].sudo().search_read([])
-            # res = json.dumps(visits, ensure_ascii=False).encode('utf-8')
-            return http.request.render('prueba.index_test',{'visits':visits})
-            # Response(res, content_type='application/json;charset=utf-8', status=200)
+            visitas = http.request.env['ir.model'].sudo().search_read([], ['id', 'name', 'model', 'order', 'state'])
+            return http.request.render('prueba.index_test',{
+                'visits':visitas
+            })
         except Exception as e:
             return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
 
