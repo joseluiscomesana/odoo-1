@@ -1,30 +1,39 @@
 <odoo>
-    <data>
-      <template id="report_visit_card">
-        <t t-call="web.html_container">
-          <t t-foreach="docs" t-as="o">
-            <t t-call="web.external_layout">
-              <div class="page">
-                <h2>Visita</h2>
-                <p>Cliente:
-                  <span t-field="o.customer.name"/>
-                </p>
-                <p>Descripción:
-                  <span t-field="o.name"/>
-                </p>
-                <p>Fecha:
-                  <span t-field="o.date" t-options='{"format":"dd/MM/yyyy"}' />
-                </p>
-              </div>
-            </t>
+  <data>
+    <template id="report_visit_card">
+      <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+          <t t-call="web.external_layout">
+            <div class="page">
+              <h2>Visita</h2>
+              <p>Cliente:
+                <span t-field="o.customer.name"/>
+              </p>
+              <p>Descripción:
+                <span t-field="o.name"/>
+              </p>
+              <p>Fecha:
+                <span t-field="o.date" t-options='{"format":"dd/MM/yyyy"}' />
+              </p>
+            </div>
           </t>
         </t>
-      </template>
-      <template id="index">
-        <title>PRUEBA GET</title>
-        <t t-foreach="visits" t-as="visit">
-          <p><t t-esc="visit"/></p>
+      </t>
+    </template>
+    <template id="index_test">
+      <title>PRUEBA GET 2</title>
+      si
+      <p>hola... <t t-esc="visits"/></p>
+      no
+      <p>Modelo...: </p>
+      <select id="modelos">
+        <t t-foreach="visitas" t-as="visit">
+          <li t-attf-value="{{visit.id}}"><span t-field="visit.name"/></li>
+          no se
+          <p>adios... <t t-esc="visit_id"/><t t-esc="visit"/></p>
         </t> 
-      </template>
+      </select>
+      llega
+    </template>
   </data>
 </odoo>
