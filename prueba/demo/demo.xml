@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
   <data>
-    <record id="visit0" model="prueba.visit">
+    <record id="visit" model="prueba.visit">
       <field name="name">Visita importada</field>
       <field name="customer">Cliente importada</field>
       <field name="date">2021-04-29</field>
