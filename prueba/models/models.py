@@ -46,16 +46,17 @@ class Visit(models.Model):
 class VisitReport(models.AbstractModel):
     
     _name='report.prueba.report_visit_card'
+    _description = 'Informe tipo tarjeta'
 
     @api.model
     def _get_report_values(self,docids,data=None):
-       report_obj = self.env['ir.actions.report']
-       report = report_obj._get_report_from_name('prueba.report_visit_card')
-       return{
+        # report_obj = self.env['ir.actions.report']
+        # report = report_obj._get_report_from_name('prueba.report_visit_card')
+        return{
            'doc_ids':docids,
            'doc_model':self.env['prueba.visit'],
            'docs':self.env['prueba.visit'].browse(docids)
-       }
+        }
 
 class CustomSaleOrder(models.Model):
     _inherit = 'sale.order'
