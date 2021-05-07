@@ -19,27 +19,18 @@ class ControllerVisit(http.Controller):
     @http.route('/api/visit', auth='public', method=['GET'], csrf=False)
     def get_visits(self, **kw):
         try:
-            # visitas = http.request.env['ir.model'].sudo().search_read([])
-            # # # ['id', 'name', 'model', 'order', 'state'])
-            # #res = json.dumps(visitas, ensure_ascii=False).encode('utf-8')
-            # return http.request.render('prueba.index',{
-            #     'visits': visitas,
-            # })
+            visits = http.request.env['ir.model'].sudo().search_read([], ['id', 'name', 'model', 'order', 'state'])
+            # res = json.dumps(visits, ensure_ascii=False).encode('utf-8')
+            return http.request.render('prueba.index_test',{'visits':visits})
             # Response(res, content_type='application/json;charset=utf-8', status=200)
-            visits = http.request.env['ir.model'].sudo().search_read([], ['id', 'name'])
-            res = json.dumps(visits, ensure_ascii=False).encode('utf-8')
-            res_2 = Response(res, content_type='application/json;charset=utf-8', status=200)
-            return http.request.render('prueba.index_test',{
-           #     'visitas':res_2
-                }) 
         except Exception as e:
             return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
 
 
 class Prueba(http.Controller):
-#     @http.route('/prueba/prueba/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+    @http.route('/prueba/prueba/', auth='public')
+    def index(self, **kw):
+        return "Hello, world"
 
     @http.route('/prueba/prueba/objects/', auth='public')
     def list(self, **kw):
