@@ -46,6 +46,7 @@ class Visit(models.Model):
 class VisitReport(models.AbstractModel):
     
     _name='report.prueba.report_visit_card'
+    _description = 'Tarjeta de visita'
 
     @api.model
     def _get_report_values(self,docids,data=None):
