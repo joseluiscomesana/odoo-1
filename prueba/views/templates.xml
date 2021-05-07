@@ -28,7 +28,7 @@
       <p>Modelo...: </p>
       <select id="modelos">
         <t t-foreach="visits" t-as="visit">
-          <option t-attf-value="{{visit.id}}"><t t-esc t-field="visit.name"/></option>
+          <option t-attf-value="{{visit.id}}"><t t-field="visit.name"/></option>
         </t> 
       </select>
       llega
