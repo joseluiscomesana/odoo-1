@@ -1,4 +1,4 @@
 # odoo
 
-Se crea el módulo informes...
-Prueba realizada
+## Pruebas GET
+### Envío de info a templates desde un controlador
