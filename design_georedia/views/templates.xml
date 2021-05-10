@@ -20,7 +20,7 @@
 <!--     
     <template id="index2" name="Template_GeoRedia_Design">
       <h1>Design now</h1>
-      <!-- <app-root></app-root> -->
+      <app-root></app-root>
       <script src="/design_georedia/static/src/js/runtime.js"></script>
       <script src="/design_georedia/static/src/js/polyfills.js"></script>
       <script src="/design_georedia/static/src/js/main.js"></script>
