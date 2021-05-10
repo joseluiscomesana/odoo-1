@@ -7,10 +7,10 @@ class DesignGeoredia(http.Controller):
     def index(self, **kw):
         return http.request.render('design_georedia.index', {})
 
-class DesignGeoredia2(http.Controller):
-    @http.route('/design_georedia/design_georedia2/', auth='public', website=True)
-    def index(self, **kw):
-        return http.request.render('design_georedia.index2', {})
+# class DesignGeoredia2(http.Controller):
+#     @http.route('/design_georedia/design_georedia2/', auth='public', website=True)
+#     def index(self, **kw):
+#         return http.request.render('design_georedia.index2', {})
 
 
 #     @http.route('/design_georedia/design_georedia/objects/', auth='public')
