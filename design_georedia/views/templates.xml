@@ -10,10 +10,10 @@
     <template id="index" name="Template_GeoRedia_Design">
         <t t-call="website.layout">
           <h1>Design now</h1>
-          <!-- <app-root></app-root>
+          <app-root></app-root>
           <script src="/design_georedia/static/src/js/runtime.js"></script>
           <script src="/design_georedia/static/src/js/polyfills.js"></script>
-          <script src="/design_georedia/static/src/js/main.js"></script> -->
+          <script src="/design_georedia/static/src/js/main.js"></script>
 
         </t>
     </template>
