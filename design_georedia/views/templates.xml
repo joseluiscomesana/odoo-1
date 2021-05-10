@@ -20,6 +20,7 @@
             <base href="/design_georedia/" />
         </xpath>
         <t t-call="website.layout">
+          <h1>Sección Diseña ahora</h1>
           <app-root></app-root>
           <script src="/design_georedia/static/src/js/runtime.js"></script>
           <script src="/design_georedia/static/src/js/polyfills.js"></script>
