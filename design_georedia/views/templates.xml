@@ -17,14 +17,13 @@
 
     <template id="index" name="Template_GeoRedia_Design">
         <xpath expr="//link[0]" position="before">
-            <base href="/" />
+            <base href="/design_georedia/" />
         </xpath>
         <t t-call="website.layout">
           <app-root></app-root>
           <script src="/design_georedia/static/src/js/runtime.js"></script>
           <script src="/design_georedia/static/src/js/polyfills.js"></script>
           <script src="/design_georedia/static/src/js/main.js"></script>
-
         </t>
     </template>
 <!--     
