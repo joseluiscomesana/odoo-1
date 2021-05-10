@@ -1,16 +1,14 @@
 <odoo>
     <data>
 
-    <!-- <template id="assets_frontend" name="Modulo_Personalizado_GeoRedia_Design" inherit_id="website.assets_frontend">
-      <xpath expr="link[0]" position="before">
-        <base href="#{ root }/#" />
+    <template id="assets_frontend" name="Modulo_Personalizado_GeoRedia_Design" inherit_id="website.assets_frontend">
+      <xpath expr="/html/head" position="inside">
+        <base href="/" />
       </xpath>
-    </template> -->
+    </template>
 
     <template id="index" name="Template_GeoRedia_Design">
         <t t-call="website.layout">
-          <base href="/" />
-          <h1>Design now</h1>
           <app-root></app-root>
           <script src="/design_georedia/static/src/js/runtime.js"></script>
           <script src="/design_georedia/static/src/js/polyfills.js"></script>
