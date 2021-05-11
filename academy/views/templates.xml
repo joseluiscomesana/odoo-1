@@ -4,10 +4,29 @@
           <title>Academy</title>
           <t t-call="website.layout">
             <div class="oe_structure">
-              <t t-foreach="teachers" t-as="teacher">
-                <p><t t-esc="teacher"/></p>
-              </t>
+              <div class="container">
+                <t t-foreach="teachers" t-as="teacher">
+                  <p><a t-attf-href="/academy/{{ slug(teacher) }}">
+                    <t t-esc="teacher.name"/></a>
+                  </p>
+                </t>
+              </div>
             </div>
+          </t>
+        </template>
+        <template id="biography">
+          <title>Academy</title>
+          <t t-call="website.layout">
+            <div class="oe_structure"/>
+            <div class="oe_structure">
+              <div class="container">
+                <p><t t-esc="person.id"/></p>
+                <h1 t-field="person.name"/>
+                <p>Última modificación: <i t-field="person.write_date" t-options='{"widget":"relative"}'/></p>
+                <div t-field="person.biography"/>
+              </div>
+            </div>
+            <div class="oe_structure"/>
           </t>
         </template>
     </data>
