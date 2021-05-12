@@ -1,0 +1,64 @@
+<odoo>
+  <data>
+    <record id="SON01" model="presupuestos.presupuesto">
+      <field name="ensayo">SON01</field>
+      <field name="descripcion">Transporte y retirada del equipo de sondeos a rotación con recuperación de testigo</field>
+    </record>
+    <record id="SON02" model="presupuestos.presupuesto">
+      <field name="ensayo">SON02</field>
+      <field name="descripcion">Emplazamiento del equipo en cada punto de sondeo a menos de 50 m de distancia </field>
+    </record>
+    <record id="SON03" model="presupuestos.presupuesto">
+      <field name="ensayo">SON03</field>
+      <field name="descripcion">Metro de sondeo a rotación en suelos (arcillas, arenas o limos) </field>
+    </record>
+    <record id="SON04" model="presupuestos.presupuesto">
+      <field name="ensayo">SON04</field>
+      <field name="descripcion">Metro de sondeo a rotación en roca de dureza media </field>
+    </record>
+    <record id="SON05" model="presupuestos.presupuesto">
+      <field name="ensayo">SON05</field>
+      <field name="descripcion">Metro de sondeo a rotación en gravas, bolos o roca fracturada </field>
+    </record>
+    <record id="SON06" model="presupuestos.presupuesto">
+      <field name="ensayo">SON06</field>
+      <field name="descripcion">Metro de sondeo a rotación en roca dura (corona de diamante) </field>
+    </record>
+    <record id="SON08" model="presupuestos.presupuesto">
+      <field name="ensayo">SON08</field>
+      <field name="descripcion">Suplemento al metro de sondeo a partir de 20 metros de profundidad </field>
+    </record>
+    <record id="SON09" model="presupuestos.presupuesto">
+      <field name="ensayo">SON09</field>
+      <field name="descripcion">Suministro de agua para sondeos a rotación, por cada 20 m o unidad</field>
+    </record>
+    <record id="SON10" model="presupuestos.presupuesto">
+      <field name="ensayo">SON10</field>
+      <field name="descripcion">Toma de muestra inalterada en sondeo </field>
+    </record>
+    <record id="SON11" model="presupuestos.presupuesto">
+      <field name="ensayo">SON11</field>
+      <field name="descripcion">Toma de muestra protegida a partir del testigo continuo</field>
+    </record>
+    <record id="SON12" model="presupuestos.presupuesto">
+      <field name="ensayo">SON12</field>
+      <field name="descripcion">Ensayo de penetración estándar SPT </field>
+    </record>
+    <record id="SON13" model="presupuestos.presupuesto">
+      <field name="ensayo">SON13</field>
+      <field name="descripcion">Metro de tubería piezométrica ciega de PVC ranurada</field>
+    </record>
+    <record id="SON14" model="presupuestos.presupuesto">
+      <field name="ensayo">SON14</field>
+      <field name="descripcion">Tapa para protección de piezómetro </field>
+    </record>
+    <record id="SON15" model="presupuestos.presupuesto">
+      <field name="ensayo">SON15</field>
+      <field name="descripcion">Toma de muestra de agua en un sondeo </field>
+    </record>
+    <record id="SON16" model="presupuestos.presupuesto">
+      <field name="ensayo">SON16</field>
+      <field name="descripcion">Caja porta-testigos de sondeo de 3 metros de capacidad </field>
+    </record>
+  </data>
+</odoo>
