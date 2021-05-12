@@ -10,11 +10,16 @@
                     <option t-attf-value="{{object['id']}}"><t t-esc="object['ensayo']"/></option>
                   </t>
                 </select>
-                <div id="resultado">
-                </div>
+                <div id="resultado" class="center-block jumbotron"/>
               </div>
             </div>
           </t>
+          <script type="text/javascript">
+            document.querySelector('#presupuestos').addEventListener('change',function(e){
+              var opcion="<h2>"+document.querySelector('#presupuestos option[value="'+e.currentTarget.value+'"]').getAttribute('data-desc')+"</h2>";
+              document.querySelector('#resultado').innerHTML=opcion;
+            })
+          </script>
         </template>
     </data>
 </odoo>
