@@ -5,12 +5,12 @@ import json
 
 class PresupuestosController(http.Controller):
 
-   @http.route('/presupuestos/presupuestos', auth='public',website=True)
-   def index(self, **kw):
-    #    Presus = http.request.env['presupuestos.presupuesto'] 
-       return http.request.render('prespuestos.selec',{
-           'objects':http.request.env['presupuestos.presupuesto'].search([])
-       } )
+    @http.route('/presupuestos/presupuestos', auth='public',website=True)
+    def index(self, **kw):
+        Presus = http.request.env['presupuestos.presupuesto'] 
+        return http.request.render('prespuestos.selec',{
+            'objects':http.request.env['presupuestos.presupuesto'].search([])
+        } )
 
     @http.route('/api/presupuestos', auth='public', method=['GET'], csrf=False)
     def get_presupuestos(self, **kw):
