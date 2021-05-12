@@ -3,16 +3,17 @@
         <template id="index">
           <t t-call="website.layout">
             <t t-set="title">Presupuestos GeoRedia</t>
-              <div class="oe_structure">
-                <div class="container">
-                  <select id="presupuestos">
-                    <t t-foreach="objects" t-as="object">
-                      <option t-attf-value="{{object['id']}}"><t t-esc="object['ensayo']"/></option>
-                    </t>
-                  </select>
+            <div class="oe_structure">
+              <div class="container">
+                <select id="presupuestos">
+                  <t t-foreach="objects" t-as="object">
+                    <option t-attf-value="{{object['id']}}"><t t-esc="object['ensayo']"/></option>
+                  </t>
+                </select>
+                <div id="resultado">
                 </div>
               </div>
-            </t>
+            </div>
           </t>
         </template>
     </data>
