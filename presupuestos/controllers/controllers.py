@@ -4,14 +4,13 @@ from odoo.http import Response
 import json
 
 class PresupuestosController(http.Controller):
-
-    @http.route('/presupuestos/presupuestos', auth='public',website=True)
+    @http.route('/api/presupuestos/lt', auth='public',method=['GET'],website=True)
     def index(self, **kw):
-        Presus = http.request.env['presupuestos.presupuesto'] 
-        return http.request.render('prespuestos.selec',{
-            'objects':http.request.env['presupuestos.presupuesto'].search([])
-        } )
-
+#        return '<h1>Aqui llega bien</h1>'
+        presus = http.request.env['presupuestos.presupuesto']
+        return http.request.render('presupuestos.index',{
+            'objects':presus.search([])
+        })
     @http.route('/api/presupuestos', auth='public', method=['GET'], csrf=False)
     def get_presupuestos(self, **kw):
         try:

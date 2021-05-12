@@ -1,19 +1,19 @@
 <odoo>
-  <data>
-    <template id="selec">
-      <t t-call="website.layout">
-        <t t-set="title">Presupuestos GeoRedia</t>
-          <div class="oe_structure">
-            <div class="container">
-              <select id="presupuesto">
-                <t t-foreach="objects" t-as="object">
-                  <option t-attf-value="{{object['id']}}"><t t-esc="object['ensayo']"></option>
-                </t>
-              </select>
-            </div>
-          </div>
-        </t>
-      </t>
-    </template>
-  </data>
+    <data>
+        <template id="index">
+          <t t-call="website.layout">
+            <t t-set="title">Presupuestos GeoRedia</t>
+              <div class="oe_structure">
+                <div class="container">
+                  <select id="presupuestos">
+                    <t t-foreach="objects" t-as="object">
+                      <option t-attf-value="{{object['id']}}"><t t-esc="object['ensayo']"/></option>
+                    </t>
+                  </select>
+                </div>
+              </div>
+            </t>
+          </t>
+        </template>
+    </data>
 </odoo>
