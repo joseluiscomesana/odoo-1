@@ -4,25 +4,32 @@
             <field name="name">Inicio</field>
             <field name="url">/</field>
             <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">0</field>
+            <field name="sequence" type="int">10</field>
         </record>
         <record id="menu_porquegeoredia" model="website.menu">
             <field name="name">Porqué nosotros</field>
             <field name="url">/georedia</field>
             <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">10</field>
+            <field name="sequence" type="int">20</field>
         </record>
         <record id="menu_design" model="website.menu">
             <field name="name">Diseña</field>
             <field name="url">/design</field>
             <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">20</field>
+            <field name="sequence" type="int">30</field>
         </record>
         <record id="menu_informes" model="website.menu">
             <field name="name">Informes</field>
             <field name="url">/informes</field>
             <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">30</field>
+            <field name="sequence" type="int">40</field>
+        </record>
+        <record id="menu_contacto" model="website.menu">
+            <field name="name">Contáctanos</field>
+            <field name="url">/contactus</field>
+            <field name="page_id" ref="website.contactus_page"/>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">50</field>
         </record>
 <!--
           <record id="object0" model="web_georedia.web_georedia">
