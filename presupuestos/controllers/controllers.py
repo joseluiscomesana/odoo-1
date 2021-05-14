@@ -6,8 +6,8 @@ import datetime
 
 class PresupuestosController(http.Controller):
     # Datos de un articulo por su id o por su código 
-    @http.route('/api/presupuestos/busca/<obj>/', auth='public', website=True)
-    def object(self, obj, **kw):
+    @http.route('/api/presupuestos/busca/<obj>/', auth='public',website=True)
+    def object_pre(self, obj, **kw):
         try:
             def fecha(o):
                 if isinstance(o,datetime.datetime):
@@ -19,11 +19,11 @@ class PresupuestosController(http.Controller):
                 busca = 'ensayo'
             condicion = [(busca,'=',obj)] 
             presupuestos = http.request.env['presupuestos.presupuesto'].sudo().search_read(condicion)
-            res = json.dumps(presupuestos,default=fecha).encode('utf-8')
+           # res = json.dumps(presupuestos,default=fecha).encode('utf-8')
             return http.request.render('presupuestos.index2',{
-                'objects':res
+                'objects':presupuestos
             })
-           #  return Response(res, content_type='application/json;charset=utf-8', status=200)
+            # return Response(res, content_type='application/json;charset=utf-8', status=200)
         except Exception as e:
             return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
 
@@ -45,7 +45,7 @@ class PresupuestosController(http.Controller):
     
     # Datos de un articulo por su id o por su código 
     @http.route('/api/articulo/buscar/<obj>/', auth='public')
-    def object(self, obj, **kw):
+    def object_art(self, obj, **kw):
         try:
             def fecha(o):
                 if isinstance(o,datetime.datetime):
@@ -61,3 +61,11 @@ class PresupuestosController(http.Controller):
             return Response(res, content_type='application/json;charset=utf-8', status=200)
         except Exception as e:
             return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
+
+    @http.route('/api/articulos/lt', auth='public',method=['GET'],website=True)
+    def index_tot(self, **kw):
+        artis = http.request.env['product.template']
+        return http.request.render('presupuestos.articulos',{
+            'objects':artis.search([])
+        })
+

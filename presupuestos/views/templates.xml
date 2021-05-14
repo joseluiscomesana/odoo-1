@@ -23,15 +23,18 @@
         </template>
         <template id="index2">
           <t t-call="website.layout">
-            <t t-set="title">Presupuestos GeoRedia</t>
+            <t t-set="title">Articulos GeoRedia</t>
             <div class="oe_structure">
               <div class="container">
                 <table id="miTabla">
-                  <tr>
-                    <td><t t-esc="object['id']"/></td>
-                    <td><t t-esc="object['name']"/></td>
-                    <td><t t-esc="object['description']"/></td>
-                  </tr>
+                  <tr><td>ID</td><td>ENSAYO</td><td>DESCRIPCION</td></tr>
+                  <t t-foreach="objects" t-as="object">
+                    <tr>
+                      <td t-attf-value="{{object['id']}}"><t t-esc="object['id']"/></td>
+                      <td t-attf-value="{{object['ensayo']}}"><t t-esc="object['ensayo']"/></td>
+                      <td t-attf-value="{{object['descripcion']}}"><t t-esc="object['descripcion']"/></td>
+                    </tr>
+                  </t>
                 </table>
               </div>
             </div>
