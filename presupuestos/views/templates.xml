@@ -7,17 +7,54 @@
               <div class="container">
                 <select id="presupuestos">
                   <t t-foreach="objects" t-as="object">
-                    <option t-attf-value="{{object['id']}}"><t t-esc="object['ensayo']"/></option>
+                    <option t-attf-value="{{object['id']}}" t-attf-data-desc="{{object['descripcion']}}"><t t-esc="object['ensayo']"/></option>
                   </t>
                 </select>
-                <div id="resultado" class="center-block jumbotron"/>
+                <div id="resultado"/>
               </div>
             </div>
           </t>
           <script type="text/javascript">
             document.querySelector('#presupuestos').addEventListener('change',function(e){
-              var opcion="<h2>"+document.querySelector('#presupuestos option[value="'+e.currentTarget.value+'"]').getAttribute('data-desc')+"</h2>";
+              var opcion=document.querySelector('#presupuestos option[value="'+e.currentTarget.value+'"]').getAttribute('data-desc');
               document.querySelector('#resultado').innerHTML=opcion;
+            })
+          </script>
+        </template>
+        <template id="index2">
+          <t t-call="website.layout">
+            <t t-set="title">Presupuestos GeoRedia</t>
+            <div class="oe_structure">
+              <div class="container">
+                <table id="miTabla">
+                  <tr>
+                    <td><t t-esc="object['id']"/></td>
+                    <td><t t-esc="object['name']"/></td>
+                    <td><t t-esc="object['description']"/></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </t>
+        </template>
+        <template id="articulos">
+          <t t-call="website.layout">
+            <t t-set="title">Articulos GeoRedia</t>
+            <div class="oe_structure">
+              <div class="container">
+                <select id="artic">
+                  <t t-foreach="objects" t-as="object">
+                    <option t-attf-value="{{object['id']}}" t-attf-data-desc="{{object['description']}}"><t t-esc="object['name']"/></option>
+                  </t>
+                </select>
+                <div id="articRes" class="center-block jumbotron"/>
+              </div>
+            </div>
+          </t>
+          <script type="text/javascript">
+            document.querySelector('#artic').addEventListener('change',function(e){
+              var opcion=document.querySelector('#artic option[value="'+e.currentTarget.value+'"]').getAttribute('data-desc');
+              document.querySelector('#articRes').innerHTML=opcion;
             })
           </script>
         </template>
