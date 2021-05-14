@@ -31,7 +31,7 @@ class PresupuestosController(http.Controller):
     def index(self, **kw):
         presus = http.request.env['presupuestos.presupuesto']
         return http.request.render('presupuestos.index',{
-            'objects':presus.search([])
+            'objects':presus.sudo().search([])
         })
 
     @http.route('/api/presupuestos', auth='public', method=['GET'], csrf=False)
@@ -66,6 +66,6 @@ class PresupuestosController(http.Controller):
     def index_tot(self, **kw):
         artis = http.request.env['product.template']
         return http.request.render('presupuestos.articulos',{
-            'objects':artis.search([])
+            'objects':artis.sudo().search([])
         })
 
