@@ -5,6 +5,7 @@ from odoo import http
 class Modsergio(http.Controller):
     @http.route('/api/sendPass/', auth='public')
     def index(self, **kw):
+        self.env['res.users'].search([('id','=','12')])[0].action_reset_password()
         return "Intentaremos enviar el reset de pass"
 
 #     @http.route('/modsergio/modsergio/objects/', auth='public')
