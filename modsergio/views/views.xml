@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="modsergio.list">
+      <field name="name">modsergio list</field>
+      <field name="model">modsergio.modsergio</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="modsergio.action_window">
+      <field name="name">modsergio window</field>
+      <field name="res_model">modsergio.modsergio</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="modsergio.action_server">
+      <field name="name">modsergio server</field>
+      <field name="model_id" ref="model_modsergio_modsergio"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="modsergio" id="modsergio.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="modsergio.menu_1" parent="modsergio.menu_root"/>
+    <menuitem name="Menu 2" id="modsergio.menu_2" parent="modsergio.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="modsergio.menu_1_list" parent="modsergio.menu_1"
+              action="modsergio.action_window"/>
+    <menuitem name="Server to list" id="modsergio" parent="modsergio.menu_2"
+              action="modsergio.action_server"/>
+-->
+  </data>
+</odoo>
