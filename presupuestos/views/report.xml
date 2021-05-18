@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <report id="report_custom"
+            string="Informe personalizado"
+            model="sale.order"
+            report_type="qweb-pdf"
+            name="presupuestos.report_custom_template"
+        />
+        <template id="report_custom_template">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/presupuestos/static/src/js/website.js"></script>
+                <link rel="stylesheet" href="/presupuestos/static/src/css/style.css" />
+            </xpath>
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="header">
+                            Mi cabecera
+                            <h1 t-field="o.name"/>
+                        </div>
+                        <div class="page">
+                            <h1>Informe</h1>
+                            <p>Personalizado</p>
+                            <!-- <span t-field="o.date_order" t-options='{"format":"dd/MM/yyyy"}' /> -->
+                        </div>
+                        <div class="footer">
+                            <small>Pie informe</small>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

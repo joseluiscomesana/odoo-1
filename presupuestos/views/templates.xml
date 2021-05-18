@@ -1,5 +1,32 @@
 <odoo>
     <data>
+        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Modulo personalizado">
+          <xpath expr="." position="inside">
+            <script type="text/javascript" src="/presupuestos/static/src/js/website.js"></script>
+            <link rel="stylesheet" href="/presupuestos/static/src/css/style.css" />
+          </xpath>
+        </template>
+
+        <template id="pnew" name="Tipo de presupuesto">
+          <t t-call="website.layout">
+            <t t-set="title">Seleccione el presupuesto</t>
+            <div class="oe_structure">
+              <div class="container">
+                <!-- <t t-foreach="objects" t-as="o"> -->
+                  <t t-call="web.external_layout">
+                    <div class="page">
+                      <h2>Presupuesto</h2>
+                      <p>Cliente: <span t-field="objects.customer.name"/></p>
+                      <p>Descripción: <span t-field="objects.type"/></p>
+                      <p>Fecha: <span t-field="objects.date" t-options='{"format":"dd/MM/yyyy"}' /></p>
+                    </div>
+                  </t>
+                <!-- </t> -->
+              </div>
+            </div>
+          </t>
+        </template>
+
         <template id="index">
           <t t-call="website.layout">
             <t t-set="title">Presupuestos GeoRedia</t>

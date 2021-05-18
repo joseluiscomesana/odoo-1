@@ -13,18 +13,12 @@ class Car(models.Model):
     fuel_litres = fields.Float(string='Litros')
     customer = fields.Many2one(comodel_name='res.users',
                                string='Cliente')
+    
+    customer_phone = fields.Char('Teléfono', related='customer.phone', readonly=True)
 
 
-class UserExtended(models.Model):
 
-    _inherit = 'res.users'
 
-    def name_get(self):
-        result = []
-        for user in self:
-            name = '%s (%s)' % (user.name, user.phone)
-            result.append((user.id, name))
-        return result
 
 
 

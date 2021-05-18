@@ -5,6 +5,17 @@ import json
 import datetime
 
 class PresupuestosController(http.Controller):
+    @http.route('/api/presupuestos/new/<obj>/', auth='public',website=True)
+    def new_presu(self,obj,**kw):
+        try:
+            def fecha(o):
+                if isinstance(o,datetime.datetime):
+                    return "{}-{}-{}".format(o.year, o.month, o.day)
+        except:
+            return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
+            
+
+
     # Datos de un articulo por su id o por su código 
     @http.route('/api/presupuestos/busca/<obj>/', auth='public',website=True)
     def object_pre(self, obj, **kw):
@@ -34,10 +45,28 @@ class PresupuestosController(http.Controller):
             'objects':presus.sudo().search([])
         })
 
+    @http.route('/api/pres/new',auth='public',method=['GET'],website=True)
+    def presnew(self,**kw):
+        pnew = http.request.env['presupuestos.solicita']
+        return http.request.render('presupuestos.pnew',{
+            'objects':pnew.sudo().search([])
+        })
+
     @http.route('/api/presupuestos', auth='public', method=['GET'], csrf=False)
     def get_presupuestos(self, **kw):
         try:
             presupuestos = http.request.env['presupuestos.presupuesto'].sudo().search_read([], ['id', 'ensayo', 'descripcion'])
+            res = json.dumps(presupuestos, ensure_ascii=False).encode('utf-8')
+            return Response(res, content_type='application/json;charset=utf-8', status=200)
+        except Exception as e:
+            return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
+    
+    @http.route('/api/presto', auth='public', method=['GET'], csrf=False)
+    def get_presupuestos(self, **kw):
+        try:
+            campos =['id', 'name', 'description','description_purchase','description_sale','categ_id','type']
+            condicion = [('sale_ok','=',True)]
+            presupuestos = http.request.env['product.template'].sudo().search_read(condicion, campos)
             res = json.dumps(presupuestos, ensure_ascii=False).encode('utf-8')
             return Response(res, content_type='application/json;charset=utf-8', status=200)
         except Exception as e:
