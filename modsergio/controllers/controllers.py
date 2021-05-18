@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http
 
 
-# class Modsergio(http.Controller):
-#     @http.route('/modsergio/modsergio/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+class Modsergio(http.Controller):
+    @http.route('/api/sendPass/', auth='public')
+    def index(self, **kw):
+        return "Intentaremos enviar el reset de pass"
 
 #     @http.route('/modsergio/modsergio/objects/', auth='public')
 #     def list(self, **kw):
