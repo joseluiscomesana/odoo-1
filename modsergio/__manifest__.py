@@ -3,14 +3,13 @@
     'name': "modsergio",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Nuevo modulo de sergio""",
 
     'description': """
-        Long description of module's purpose
+        descripcion del nuevo modulo de sergioooooooooo
     """,
 
-    'author': "My Company",
+    'author': "Sergio L",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
