@@ -53,7 +53,7 @@ class PresupuestosController(http.Controller):
         })
 
     @http.route('/api/presupuestos', auth='public', method=['GET'], csrf=False)
-    def get_presupuestos(self, **kw):
+    def get_presus(self, **kw):
         try:
             presupuestos = http.request.env['presupuestos.presupuesto'].sudo().search_read([], ['id', 'ensayo', 'descripcion'])
             res = json.dumps(presupuestos, ensure_ascii=False).encode('utf-8')
@@ -62,7 +62,7 @@ class PresupuestosController(http.Controller):
             return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
     
     @http.route('/api/presto', auth='public', method=['GET'], csrf=False)
-    def get_presupuestos(self, **kw):
+    def get_presto(self, **kw):
         try:
             campos =['id', 'name', 'description','description_purchase','description_sale','categ_id','type']
             condicion = [('sale_ok','=',True)]
