@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
 
 
-# class modsergio(models.Model):
-#     _name = 'modsergio.modsergio'
-#     _description = 'modsergio.modsergio'
+class modsergio(models.Model):
+    _name = 'modsergio.modsergio'
+    _description = 'modsergio.modsergio'
 
 #     name = fields.Char()
 #     value = fields.Integer()
