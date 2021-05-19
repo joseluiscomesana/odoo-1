@@ -15,6 +15,7 @@ class presupuestos(models.Model):
 
 class articuloExtend(models.Model):
     _name = 'presupuestos.articulos'
+    _description = 'Artículos'
     _inherit = 'product.template'
 
     def name_get(self):

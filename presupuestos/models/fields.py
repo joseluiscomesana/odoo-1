@@ -5,7 +5,7 @@ class Champs(models.Model):
     _description = 'Solicitud de presupuesto'
 
     type = fields.Selection([('P','Personalizado'),('R','Prediseñado'),('T','Tutorial')],string="Tipo",required=True)
-    customer = fields.Many2one(String="Cliente",comodel_name='res.partner')
+    customer = fields.Many2one(string="Cliente",comodel_name='res.partner')
     date = fields.Datetime(string='Fecha')
 
 class FieldsModel(models.Model):
