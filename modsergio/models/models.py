@@ -4,6 +4,7 @@ from odoo import models, fields, api
 
 
 class modsergio(models.Model):
+    _inherit = 'res.users'
     _name = 'modsergio.modsergio'
     _description = 'modsergio.modsergio'
 
