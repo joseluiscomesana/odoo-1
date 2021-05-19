@@ -9,8 +9,9 @@ class Modsergio(http.Controller):
     def sendPass(self, **kw):
         # self.env['res.users'].sudo().search([('id','=','12')])[0].action_reset_password()
         try:
-            self.sudo(user=12).action_reset_password()
-            return Response(json.dumps({'result': 'sended'}), content_type='application/json;charset=utf-8', status=200)
+            #self.sudo(user=12).action_reset_password()
+            usuario = http.request.env['res.users'].sudo().search([('id','=','12')])[0] #.action_reset_password()
+            return Response(json.dumps({'result': 'sended', 'usuario':json.dumps(usuario, ensure_ascii=False).encode('utf-8')}), content_type='application/json;charset=utf-8', status=200)
         except Exception as e:
             return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
         #records.action_reset_password()
