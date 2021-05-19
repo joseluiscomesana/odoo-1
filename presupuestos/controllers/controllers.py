@@ -64,10 +64,45 @@ class PresupuestosController(http.Controller):
     @http.route('/api/presto', auth='public', method=['GET'], csrf=False)
     def get_presto(self, **kw):
         try:
-            campos =['id', 'name', 'description','description_purchase','description_sale','categ_id','type']
+            def fecha(o):
+                if isinstance(o,datetime.datetime):
+                    return "{}-{}-{}".format(o.year, o.month, o.day)
+            campos =['id', 
+                'name', 
+                'sequence',
+                'description',
+                'description_purchase',
+                'description_sale',
+                'categ_id',
+                'type',
+                'categ_id',
+                'list_price',
+                'volume',
+                'weight',
+                'sale_ok',
+                'purchase_ok',
+                'uom_id',
+                'company_id',
+                'active',
+                'color',
+                'default_code',
+                'create_uid',
+                'create_date',
+                'write_uid',
+                'write_date',
+                'service_type',
+                'sale_line_warn',
+                'sale_line_warn_msg',
+                'expense_policy',
+                'invoice_policy',
+                'website_meta_title',
+                'website_meta_description',
+                'website_meta_keywords'
+            ]
             condicion = [('sale_ok','=',True)]
             presupuestos = http.request.env['product.template'].sudo().search_read(condicion, campos)
-            res = json.dumps(presupuestos, ensure_ascii=False).encode('utf-8')
+            # presupuestos = http.request.env['product.template'].sudo().search_read(condicion)
+            res = json.dumps(presupuestos,default=fecha, ensure_ascii=False).encode('utf-8')
             return Response(res, content_type='application/json;charset=utf-8', status=200)
         except Exception as e:
             return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)

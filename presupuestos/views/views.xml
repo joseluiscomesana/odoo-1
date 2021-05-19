@@ -1,5 +1,6 @@
 <odoo>
   <data>
+    <!--
     <record id="view_presupuestos_articulos_tree" model="ir.ui.view">
       <field name="name">view.presupuestos.articulos.tree</field>
       <field name="model">presupuestos.articulos</field>
@@ -44,7 +45,9 @@
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">presupuestos.articulos</field>
       <field name="view_mode">tree,kanban</field>
+      -->
       <!-- <field name="search_view_id">view.presupuestos.presupuesto.search</field> -->
+      <!--
       <field name="context" eval="{'search_default_filter_by_name':1,'search_default_filter_by_description':2}"/>
       <field name="help" type="html">
         <p class="oe_view_nocontent_create">
@@ -55,7 +58,7 @@
         </p>
       </field>
     </record>
-
+-->
 
 
     <!-- explicit list view definition -->
