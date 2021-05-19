@@ -9,5 +9,9 @@ h3{
 p{
     color:darkblue;
     font-style: oblique;
-    font-weight: bold;
+    /* font-weight: bold; */
 } 
+.nav-link{
+    color: orange;
+    font-weight: bold;
+}
