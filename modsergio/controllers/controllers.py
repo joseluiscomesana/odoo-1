@@ -11,11 +11,11 @@ class Modsergio(http.Controller):
         #records.action_reset_password()
         return "Intentaremos enviar el reset de pass"
 
-    @http.route('/api/presupuestos', auth='public', method=['GET'], csrf=False)
+    @http.route('/api/usuarios', auth='public', method=['GET'], csrf=False)
     def get_presupuestos(self, **kw):
         try:
-            presupuestos = http.request.env['presupuestos.presupuesto'].sudo().search_read([], ['id', 'ensayo', 'descripcion'])
-            res = json.dumps(presupuestos, ensure_ascii=False).encode('utf-8')
+            usuarios = http.request.env['res.users'].sudo().search_read([], ['name', 'email'])
+            res = json.dumps(usuarios, ensure_ascii=False).encode('utf-8')
             return Response(res, content_type='application/json;charset=utf-8', status=200)
         except Exception as e:
             return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
