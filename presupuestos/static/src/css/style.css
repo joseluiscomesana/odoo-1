@@ -1,0 +1,17 @@
+h3{
+    color:#ff0000;
+    font-size:36px;
+} 
+h3{
+    color:#160f5c;
+    font-size:56px;
+} 
+p{
+    color:darkblue;
+    font-style: oblique;
+    /* font-weight: bold; */
+} 
+.nav-link{
+    color: orange;
+    font-weight: bold;
+}

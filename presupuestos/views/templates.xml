@@ -1,0 +1,96 @@
+<odoo>
+    <data>
+      <!-- Cargamos los css y js para el frontend de nuestro website -->
+        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Modulo personalizado">
+          <xpath expr="." position="inside">
+            <script type="text/javascript" src="/presupuestos/static/src/js/website.js"></script>
+            <link rel="stylesheet" href="/presupuestos/static/src/css/style.css" />
+          </xpath>
+        </template>
+
+        <template id="pnew" name="Tipo de presupuesto">
+          <t t-call="website.layout">
+            <t t-set="title">Seleccione el presupuesto</t>
+            <div class="oe_structure">
+              <div class="container">
+                <t t-foreach="objects2" t-as="a">
+                  <p><t t-esc="a.name"/></p>
+                </t>
+                <!-- <t t-foreach="objects" t-as="o"> -->
+                  <t t-call="web.external_layout">
+                    <div class="page">
+                      <h2>Presupuesto</h2>
+                      <p>Cliente: <span t-field="objects.customer.name"/></p>
+                      <p>Descripción: <span t-field="objects.type"/></p>
+                      <p>Fecha: <span t-field="objects.date" t-options='{"format":"dd/MM/yyyy"}' /></p>
+                    </div>
+                  </t>
+                <!-- </t> -->
+              </div>
+            </div>
+          </t>
+        </template>
+
+        <template id="index">
+          <t t-call="website.layout">
+            <t t-set="title">Presupuestos GeoRedia</t>
+            <div class="oe_structure">
+              <div class="container">
+                <select id="presupuestos">
+                  <t t-foreach="objects" t-as="object">
+                    <option t-attf-value="{{object['id']}}" t-attf-data-desc="{{object['descripcion']}}"><t t-esc="object['ensayo']"/></option>
+                  </t>
+                </select>
+                <div id="resultado"/>
+              </div>
+            </div>
+          </t>
+          <script type="text/javascript">
+            document.querySelector('#presupuestos').addEventListener('change',function(e){
+              var opcion=document.querySelector('#presupuestos option[value="'+e.currentTarget.value+'"]').getAttribute('data-desc');
+              document.querySelector('#resultado').innerHTML=opcion;
+            })
+          </script>
+        </template>
+        <template id="index2">
+          <t t-call="website.layout">
+            <t t-set="title">Articulos GeoRedia</t>
+            <div class="oe_structure">
+              <div class="container">
+                <table id="miTabla">
+                  <tr><td>ID</td><td>ENSAYO</td><td>DESCRIPCION</td></tr>
+                  <t t-foreach="objects" t-as="object">
+                    <tr>
+                      <td t-attf-value="{{object['id']}}"><t t-esc="object['id']"/></td>
+                      <td t-attf-value="{{object['ensayo']}}"><t t-esc="object['ensayo']"/></td>
+                      <td t-attf-value="{{object['descripcion']}}"><t t-esc="object['descripcion']"/></td>
+                    </tr>
+                  </t>
+                </table>
+              </div>
+            </div>
+          </t>
+        </template>
+        <template id="articulos">
+          <t t-call="website.layout">
+            <t t-set="title">Articulos GeoRedia</t>
+            <div class="oe_structure">
+              <div class="container">
+                <select id="artic">
+                  <t t-foreach="objects" t-as="object">
+                    <option t-attf-value="{{object['id']}}" t-attf-data-desc="{{object['description']}}"><t t-esc="object['name']"/></option>
+                  </t>
+                </select>
+                <div id="articRes" class="center-block jumbotron"/>
+              </div>
+            </div>
+          </t>
+          <script type="text/javascript">
+            document.querySelector('#artic').addEventListener('change',function(e){
+              var opcion=document.querySelector('#artic option[value="'+e.currentTarget.value+'"]').getAttribute('data-desc');
+              document.querySelector('#articRes').innerHTML=opcion;
+            })
+          </script>
+        </template>
+    </data>
+</odoo>

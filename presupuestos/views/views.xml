@@ -1,0 +1,157 @@
+<odoo>
+  <data>
+    <!-- <record id="view_presupuestos_articulos_tree" model="ir.ui.view">
+      <field name="name">view.presupuestos.articulos.tree</field>
+      <field name="model">presupuestos.articulos</field>
+      <field name="arch" type="xml">
+        <tree string="Articulos">
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record id="view_presupuestos_articulos_kanban" model="ir.ui.view">
+      <field name="name">view.presupuestos.articulos.kanban</field>
+      <field name="model">presupuestos.articulos</field>
+      <field name="arch" type="xml">
+        <kanban class="o_presupuestos_articulos_kanban">
+          <field name="id"/>
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img alt="Avatar" 
+                        t-att-src="kanban_image('presupuestos.articulos', 'image', record.id.raw_value)"/>
+                </div>
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="name"/>
+                  </strong>
+                  <div t-if="record.description.value">
+                    <t t-esc="record.description.value"/>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record id="action_presupuestos_articulos_view" model="ir.actions.act_window">
+      <field name="name">Artículos</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">presupuestos.articulos</field>
+      <field name="view_mode">tree,kanban</field>
+      -->
+      <!-- <field name="search_view_id">view.presupuestos.presupuesto.search</field> -->
+      <!--
+      <field name="context" eval="{'search_default_filter_by_name':1,'search_default_filter_by_description':2}"/>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Presupuestos
+        </p>
+        <p>
+          No existen presupuestos creados
+        </p>
+      </field>
+    </record> -->
+
+
+
+    <!-- explicit list view definition -->
+    <!-- view tree -->
+    <record id="view_presupuestos_presupuesto_tree" model="ir.ui.view">
+      <field name="name">view.presupuestos.presupuesto.tree</field>
+      <field name="model">presupuestos.presupuesto</field>
+      <field name="arch" type="xml">
+        <tree string="Presupuesto">
+          <field name="ensayo" />
+          <field name="descripcion" />
+        </tree>
+      </field>
+    </record>
+    <!-- view kanban -->
+    <record id="view_presupuestos_presupuesto_kanban" model="ir.ui.view">
+      <field name="name">view.presupuestos.presupuesto.kanban</field>
+      <field name="model">presupuestos.presupuesto</field>
+      <field name="arch" type="xml">
+        <kanban class="o_presupuestos_presupuesto_kanban">
+          <field name="id"/>
+          <field name="ensayo"/>
+          <field name="descripcion"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img alt="Avatar" 
+                        t-att-src="kanban_image('presupuestos.presupuesto', 'image', record.id.raw_value)"/>
+                </div>
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="ensayo"/>
+                  </strong>
+                  <div t-if="record.descripcion.value">
+                    <t t-esc="record.descripcion.value"/>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record id="action_presupuestos_presupuesto_view" model="ir.actions.act_window">
+      <field name="name">Presupuesto</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">presupuestos.presupuesto</field>
+      <field name="view_mode">tree,kanban</field>
+      <!-- <field name="search_view_id">view.presupuestos.presupuesto.search</field> -->
+      <field name="context" eval="{'search_default_filter_by_ensayo':1,'search_default_filter_by_descripcion':2}"/>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Presupuestos
+        </p>
+        <p>
+          No existen presupuestos creados
+        </p>
+      </field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="presupuestos.action_server">
+      <field name="name">presupuestos server</field>
+      <field name="model_id" ref="model_presupuestos_presupuestos"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="presupuestos" id="presupuestos.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="presupuestos.menu_1" parent="presupuestos.menu_root"/>
+    <menuitem name="Menu 2" id="presupuestos.menu_2" parent="presupuestos.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="presupuestos.menu_1_list" parent="presupuestos.menu_1"
+              action="presupuestos.action_window"/>
+    <menuitem name="Server to list" id="presupuestos" parent="presupuestos.menu_2"
+              action="presupuestos.action_server"/>
+-->
+  </data>
+</odoo>

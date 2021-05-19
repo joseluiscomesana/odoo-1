@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record id="report_custom"
+            string="Informe personalizado"
+            model="sale.order"
+            report_type="qweb-pdf"
+            name="presupuestos.report_custom_template"
+        />
+        <template id="report_custom_template">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/presupuestos/static/src/js/website.js"></script>
+                <link rel="stylesheet" href="/presupuestos/static/src/css/style.css" />
+            </xpath>
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="header">
+                            Mi cabecera
+                            <h1 t-field="o.name"/>
+                        </div>
+                        <div class="page">
+                            <h1>Informe</h1>
+                            <p>Personalizado</p>
+                            <!-- <span t-field="o.date_order" t-options='{"format":"dd/MM/yyyy"}' /> -->
+                        </div>
+                        <div class="footer">
+                            <small>Pie informe</small>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_custom" model="report.paperformat">
+            <field name="name">Formato de papel</field>
+            <field name="default" eval='True'/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">50</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">5</field>
+            <field name="dpi">80</field>
+        </record>
+
+        <record id="report_custom" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="paperformat_custom" />
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_presupuestos_presupuestos,presupuestos.presupuesto,model_presupuestos_presupuesto,,1,0,0,0
+access_presupuestos_solicita,presupuestos.solicita,model_presupuestos_solicita,,1,0,0,0
