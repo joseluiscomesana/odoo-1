@@ -6,13 +6,18 @@ import json
 
 class Modsergio(http.Controller):
     @http.route('/api/sendPass/', auth='public')
-    def index(self, **kw):
-        self.env['res.users'].sudo().search([('id','=','12')])[0].action_reset_password()
+    def sendPass(self, **kw):
+        # self.env['res.users'].sudo().search([('id','=','12')])[0].action_reset_password()
+        try:
+            self.sudo(user=12).action_reset_password()
+            return Response(json.dumps({'result': 'sended'}), content_type='application/json;charset=utf-8', status=200)
+        except Exception as e:
+            return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
         #records.action_reset_password()
-        return "Intentaremos enviar el reset de pass"
+        #return "Intentaremos enviar el reset de pass"
 
     @http.route('/api/usuarios', auth='public', method=['GET'], csrf=False)
-    def get_presupuestos(self, **kw):
+    def get_usuarios(self, **kw):
         try:
             usuarios = http.request.env['res.users'].sudo().search_read([], ['name', 'email'])
             res = json.dumps(usuarios, ensure_ascii=False).encode('utf-8')
