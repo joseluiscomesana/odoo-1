@@ -7,12 +7,15 @@
             <link rel="stylesheet" href="/presupuestos/static/src/css/style.css" />
           </xpath>
         </template>
-      
+
         <template id="pnew" name="Tipo de presupuesto">
           <t t-call="website.layout">
             <t t-set="title">Seleccione el presupuesto</t>
             <div class="oe_structure">
               <div class="container">
+                <t t-foreach="objects2" t-as="a">
+                  <p><t t-esc="a.name"/></p>
+                </t>
                 <!-- <t t-foreach="objects" t-as="o"> -->
                   <t t-call="web.external_layout">
                     <div class="page">

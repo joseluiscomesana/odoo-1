@@ -47,9 +47,11 @@ class PresupuestosController(http.Controller):
 
     @http.route('/api/pres/new',auth='public',method=['GET'],website=True)
     def presnew(self,**kw):
-        pnew = http.request.env['presupuestos.solicita']
+        pnew = http.request.env['presupuestos.solicita'].sudo().search([])
+        pnew2= http.request.env['product.template'].sudo().search([])
         return http.request.render('presupuestos.pnew',{
-            'objects':pnew.sudo().search([])
+            'objects' :pnew,
+            'objects2':pnew2
         })
 
     @http.route('/api/presupuestos', auth='public', method=['GET'], csrf=False)
@@ -128,8 +130,8 @@ class PresupuestosController(http.Controller):
 
     @http.route('/api/articulos/lt', auth='public',method=['GET'],website=True)
     def index_tot(self, **kw):
-        artis = http.request.env['product.template']
+        artis = http.request.env['product.template'].sudo().search([])
         return http.request.render('presupuestos.articulos',{
-            'objects':artis.sudo().search([])
+            'objects':artis
         })
 

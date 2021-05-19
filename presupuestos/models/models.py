@@ -11,12 +11,12 @@ class presupuestos(models.Model):
     descripcion = fields.Text(string='Descripción')
     artic = fields.Many2one(string='Articulo', comodel_name='product.template', ondelete='restrict')
 
-    articName = fields.Char('Nombre',related='artic.name',readonly=False)
+    articName = fields.Char(string='Nombre',related='artic.name',readonly=False)
 
 class articuloExtend(models.Model):
     _name = 'presupuestos.articulos'
-    _description = 'Artículos'
-    _inherit = 'product.template'
+    _description = 'Todos los articulos'
+    _inherit = 'product.product'
 
     def name_get(self):
         result =[]
