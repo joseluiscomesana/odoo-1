@@ -11,7 +11,7 @@ class Modsergio(http.Controller):
         try:
             #self.sudo(user=12).action_reset_password()
             usuario = http.request.env['res.users'].sudo().search([('id','=','12')])[0].sudo().action_reset_password()
-            usuario.sudo().action_reset_password()
+            usuario.action_reset_password()
             return Response(json.dumps({'result': 'sended', 'usuario':str(usuario)}), content_type='application/json;charset=utf-8', status=200)
         except Exception as e:
             return Response(json.dumps({'error': str(e)}), content_type='application/json;charset=utf-8', status=505)
